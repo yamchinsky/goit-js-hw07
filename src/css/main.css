@@ -1,0 +1,29 @@
+#gallery {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+}
+
+.gallery_item {
+  margin-right: 30px;
+}
+
+.gallery_image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Задание 6 */
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
