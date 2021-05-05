@@ -18,17 +18,18 @@ const ingredients = [
 
 
 
-const ulNode = document.createElement('ul');
+const ulNode = document.querySelector('#ingredients');
 
-
-
-ingredients.forEach(item => {
-    
-    const liNode = document.createElement('li');
-    liNode.textContent = item;
-    ulNode.appendChild(liNode);
-    return ulNode;
+const listNode = ingredients.map(item => {
+  const liNode = document.createElement('li');
+  liNode.textContent = item;
+  
+  
+  return liNode;
 });
+
+ulNode.append(...listNode);
+
 
 console.log(ulNode);
 

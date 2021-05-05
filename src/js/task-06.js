@@ -13,17 +13,37 @@
 // если неправильное - красным.
 // Для добавления стилей, используй CSS-классы valid и invalid.
 
-const inputSymbols = document.querySelector(['#validation-input']);
-const inputLength = inputSymbols.getAttribute('data-length');
+const inputSymbols = document.querySelector('#validation-input');
 
-inputSymbols.addEventListener('input', checkSymbols);
+
+inputSymbols.addEventListener('blur', checkSymbols);
+
+
+function toChangeClass(addClass, removeClass) {
+
+  inputSymbols.classList.add(addClass);
+  inputSymbols.classList.remove(removeClass);
+};
 
 function checkSymbols() {
-  if (inputSymbols.value.length > inputLength) {
-    inputSymbols.classList.remove('valid');
-    inputSymbols.classList.add('invalid');
-  } else {
-    inputSymbols.classList.remove('invalid');
-    inputSymbols.classList.add('valid');
+  if (Number(inputSymbols.dataset.length) === (inputSymbols.value.length))  {
+    toChangeClass('valid', 'invalid');
   }
-}
+  else {
+    toChangeClass('invalid', 'valid');
+  }
+};
+
+
+
+
+
+// function checkSymbols() {
+//   if (inputSymbols.value.length > inputLength) {
+//     inputSymbols.classList.remove('valid');
+//     inputSymbols.classList.add('invalid');
+//   } else {
+//     inputSymbols.classList.remove('invalid');
+//     inputSymbols.classList.add('valid');
+//   }
+// }
